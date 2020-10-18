@@ -1,0 +1,259 @@
+.Weather * {
+  margin: 0;
+  padding: 0;
+}
+
+.Weather html,
+body {
+  height: 100%;
+  width: 100%;
+  overflow-x: hidden;
+  margin: 0;
+}
+
+.Weather .clear {
+  clear: both;
+}
+
+.Weather body {
+  font-family: "Montserrat", sans-serif;
+  padding: 100px;
+}
+
+.Weather h1 {
+  color: #10375c;
+  font-size: 60px;
+}
+
+/*Weather status information e.g Wind, Percipitation etc.*/
+.Weather ul {
+  line-height: 40px;
+}
+
+.Weather .container {
+  display: block;
+  height: auto;
+}
+
+.Weather .mb-3 {
+  display: block;
+  margin: 0 auto;
+  padding: 0 auto;
+  box-shadow: rgba(37, 39, 89, 0.08) 0px 8px 8px 0;
+  border: none;
+}
+
+.Weather .today-weather-info {
+  display: block;
+  margin: 0 auto;
+  padding-top: 60px;
+  padding: 25px;
+}
+
+.Weather .line-mark {
+  color: #10375c;
+}
+
+.Weather .date-dayname {
+  font-size: 38px;
+}
+
+.Weather .date-day {
+  font-size: 20px;
+}
+/* 
+.Weather .location {
+  font-size: 24px;
+  padding-left: 20px;
+} */
+
+.Weather .material-icons {
+  font-size: 40px;
+}
+
+.Weather .country-location {
+  font-size: 24px;
+  padding-left: 5px;
+  margin: 0 auto;
+}
+
+.Weather .location-btn {
+  color: #ffffff;
+  background-color: transparent;
+}
+
+.Weather .current-location {
+  padding: 10px 10px;
+  background-color: transparent;
+  color: #ffffff;
+  border: none;
+}
+
+.Weather .fa-map-marker-alt {
+  font-size: 30px;
+  /* cursor: pointer; */
+}
+
+.Weather :hover.fa-map-marker-alt {
+  color: #10375c;
+}
+
+.Weather .units {
+  clear: both;
+}
+
+.Weather :hover.units {
+  text-decoration: none;
+  color: #10375c;
+}
+
+.Weather .active {
+  cursor: default;
+  color: #10375c;
+}
+
+.Weather :hover.active {
+  cursor: default;
+}
+
+.Weather .temperature-units {
+  color: #10375c;
+  margin: -72px;
+  margin-left: 10px;
+  padding-left: 65px;
+  float: left;
+}
+
+.Weather .col-md-4 {
+  background-image: url(https://images.unsplash.com/photo-1558486012-817176f84c6d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=619&q=80);
+  height: 664px;
+  color: #fff;
+  border-radius: 4px;
+  background-position: center;
+  box-shadow: rgba(37, 39, 89, 0.08) 0px 8px 8px 0;
+  padding: 50px;
+}
+
+.Weather .weather-type {
+  font-size: 30px;
+  color: #10375c;
+  text-transform: capitalize;
+  margin-top: 10px;
+}
+
+.Weather .col-md-8 {
+  background-color: #086972;
+  color: #fff;
+  border-radius: 4px;
+  box-shadow: rgba(37, 39, 89, 0.08) 0px 8px 8px 0;
+}
+
+.Weather .form-control-plaintext {
+  font-size: 30px;
+  display: block;
+  margin: 0 auto;
+  color: #fff;
+  padding: 20px;
+}
+
+.Weather .form-control {
+  margin-left: 20px;
+}
+
+.Weather .search-btn {
+  background-color: #5f9ea0;
+  text-align: center;
+  border: none;
+}
+
+.Weather :hover.search-btn {
+  background-color: #10375c;
+}
+
+.Weather .weather-status {
+  padding: 20px;
+}
+
+.Weather .weather-status-info {
+  margin: 0 20px 10px;
+  padding: 0;
+  font-size: 20px;
+  list-style-type: none;
+  display: block;
+}
+
+.Weather .week-container {
+  background-color: #5f9ea0;
+  border-radius: 6px;
+  display: block;
+  margin: 0 auto;
+  padding: 20px;
+  height: 240px;
+}
+
+.Weather .row {
+  padding: 0 auto;
+  margin: 0 auto;
+}
+
+.Weather .col-2 {
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.Weather .hour-forecast {
+  table-layout: auto;
+  white-space: nowrap;
+}
+
+.Weather .forecast-img {
+  width: 100%;
+  margin: -18px;
+  padding-bottom: 10px;
+}
+
+.Weather .weather-hr {
+  text-align: center;
+}
+
+.Weather .week-list {
+  list-style: none;
+  font-size: 22px;
+}
+
+.Weather .col-sm {
+  margin: 0 auto;
+  display: block;
+}
+
+.Weather .fa-cloud {
+  font-size: 60px;
+}
+
+.Weather .fa-cloud-showers-heavy {
+  font-size: 60px;
+}
+
+.Weather .fa-cloud-sun {
+  font-size: 60px;
+}
+
+.Weather .text-muted {
+  color: #fff !important;
+}
+
+.Weather .footer-credits {
+  display: block;
+  font-size: 18px;
+  margin: 0 65px;
+}
+
+.Weather .footer-link {
+  color: #086972;
+  font-size: 18px;
+}
+
+.Weather .footer-link:hover {
+  text-decoration: underline !important;
+}
