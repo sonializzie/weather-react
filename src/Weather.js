@@ -3,7 +3,15 @@ import axios from "axios";
 
 export default function Weather(props) {
   function handleResponse() {
-   
+    // alert(
+    //   `The weather in ${response.data.name} is ${response.data.main.temp}˚C`
+    // );
+  }
+  let apiKey = "cf23fefe944409418faf6ab205d2379d";
+  let units = "metric";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=
+  ${props.city}&appid=${apiKey}&units=${units}`;
+
   axios.get(apiUrl).then(handleResponse);
   return (
     <div className="Weather">
