@@ -211,12 +211,12 @@ export default function Weather(props) {
         <div class="clear"></div>
         <footer class="footer-credits">
           <a
-            href="https://github.com/sonializzie/weather-app"
+            href="https://github.com/sonializzie/weather-react"
             class="footer-link"
           >
             Open-source code
           </a>
-          <span> by : 👩🏾‍💻 | Sonia Ndonga</span>
+          <span> by : Sonia Ndonga</span>
         </footer>
         <script
           type="text/javascript"
