@@ -212,6 +212,7 @@ export default function Weather(props) {
         <footer class="footer-credits">
           <a
             href="https://github.com/sonializzie/weather-react"
+            target="blank"
             class="footer-link"
           >
             Open-source code on GitHub
