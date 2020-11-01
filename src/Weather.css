@@ -15,6 +15,13 @@ body {
   clear: both;
 }
 
+/* .Weather .loading-Message {
+  margin: 0 auto;
+  text-align: center;
+  font-size: 22px;
+  font-family: "Montserrat", sans-serif;
+} */
+
 .Weather body {
   font-family: "Montserrat", sans-serif;
   padding: 100px;
@@ -225,6 +232,16 @@ body {
 .Weather .col-sm {
   margin: 0 auto;
   display: block;
+}
+
+/*Days of the week data*/
+.Weather .day-of-week {
+  margin: 15px 15px auto;
+}
+
+/*Days of each temperature data*/
+.Weather .day-temp {
+  margin: 15px 15px auto;
 }
 
 .Weather .fa-cloud {
