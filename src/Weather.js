@@ -214,9 +214,9 @@ export default function Weather(props) {
             href="https://github.com/sonializzie/weather-react"
             class="footer-link"
           >
-            Open-source code
+            Open-source code on GitHub
           </a>
-          <span> by : Sonia Ndonga</span>
+          <span> | Project Coded by Sonia Ndonga</span>
         </footer>
         <script
           type="text/javascript"
