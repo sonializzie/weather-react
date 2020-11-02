@@ -4,6 +4,7 @@ import FormattedDay from "./FormattedDay";
 import WeatherIcon from "./WeatherIcon";
 import WeatherTemperature from "./WeatherTemperature";
 import axios from "axios";
+import WeatherForecast from "./WeatherForecast";
 
 export default function Weather(props) {
   const [city, setCity] = useState(props.defaultCity);
@@ -172,53 +173,13 @@ export default function Weather(props) {
                       </ul>
                     </div>
                     <br />
+
                     <div className="week-container row" id="forecast">
                       <div className="week-list">
                         <div className="row">
                           <div className="col-sm">
-                            <h4 className="day-of-week">Mon</h4>
-                            <img
-                              src="http://openweathermap.org/img/wn/02d@2x.png"
-                              alt="cloud with sun"
-                            />
-                            <span className="day-temp">18°C</span>
+                            <WeatherForecast city={weatherData.city} />
                           </div>
-                          <div className="col-sm">
-                            <h4 className="day-of-week">Tues</h4>
-                            <img
-                              src="http://openweathermap.org/img/wn/04d@2x.png"
-                              alt="cloudy"
-                            />
-                            <span className="day-temp">18°C</span>
-                          </div>
-                          <div className="col-sm">
-                            <h4 className="day-of-week">Wed</h4>
-                            <img
-                              src="http://openweathermap.org/img/wn/10d@2x.png"
-                              alt="rainy"
-                            />
-                            <span className="day-temp">18°C</span>
-                          </div>
-                          <div className="col-sm">
-                            <h4 className="day-of-week">Thurs</h4>
-                            <img
-                              src="http://openweathermap.org/img/wn/03d@2x.png"
-                              alt="cloudy"
-                            />
-                            <span className="day-temp">18°C</span>
-                          </div>
-                          <div className="col-sm">
-                            <h4 className="day-of-week">Fri</h4>
-                            <img
-                              src="http://openweathermap.org/img/wn/10d@2x.png"
-                              alt="rainy"
-                            />
-                            <span className="day-temp">18°C</span>
-                          </div>
-                          {/* <h4>Tues</h4>
-                        <img src="https://ssl.gstatic.com/onebox/weather/64/sunny.png" />
-                        <h4>Wed</h4>
-                        <img src="https://ssl.gstatic.com/onebox/weather/64/sunny.png" /> */}
                         </div>
                         <div className="clear"></div>
                       </div>
