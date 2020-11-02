@@ -4,6 +4,7 @@ import FormattedDay from "./FormattedDay";
 import axios from "axios";
 
 export default function Weather(props) {
+  const [city, setCity] = useState(props.defaultCity);
   const [weatherData, setweatherData] = useState({ ready: false });
   function handleResponse(response) {
     console.log(response.data);
@@ -16,11 +17,29 @@ export default function Weather(props) {
       city: response.data.name,
       country: response.data.sys.country,
       description: response.data.weather[0].description,
-      iconUrl: response.data.weather.icon,
+      iconUrl: `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
       clouds: response.data.clouds.all,
       humidity: response.data.main.humidity,
       wind: response.data.wind.speed,
     });
+  }
+
+  function search() {
+    let apiKey = "cf23fefe944409418faf6ab205d2379d";
+    let units = "metric";
+    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=
+    ${city}&appid=${apiKey}&units=${units}`;
+    axios.get(apiUrl).then(handleResponse);
+  }
+
+  function handleSubmit(event) {
+    event.preventDefault();
+    search();
+  }
+
+  function handleCityChange(event) {
+    event.preventDefault();
+    setCity(event.target.value);
   }
 
   if (weatherData.ready) {
@@ -83,7 +102,7 @@ export default function Weather(props) {
                       <br />
 
                       <img
-                        src="{weatherData.iconUrl}"
+                        src={weatherData.iconUrl}
                         alt="{weatherData.description}"
                         id="icon"
                       />
@@ -128,7 +147,8 @@ export default function Weather(props) {
                         />
                       </div>
                     </form>
-                    <form id="search-form">
+
+                    <form onSubmit={handleSubmit}>
                       <div class="row">
                         <div class="form-group mx-sm-3 mb-2 col-8">
                           <label for="inputCity2" class="sr-only">
@@ -139,6 +159,7 @@ export default function Weather(props) {
                             class="form-control"
                             id="city-input"
                             autoFocus="on"
+                            onChange={handleCityChange}
                             autoComplete="off"
                             placeholder="Type a city..."
                           />
@@ -247,12 +268,7 @@ export default function Weather(props) {
       </div>
     );
   } else {
-    let apiKey = "cf23fefe944409418faf6ab205d2379d";
-    let units = "metric";
-    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=
-  ${props.defaultCity}&appid=${apiKey}&units=${units}`;
-    axios.get(apiUrl).then(handleResponse);
-
+    search();
     return <h1>Loading...</h1>;
   }
 }
