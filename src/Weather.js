@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import FormattedDate from "./FormattedDate";
 import FormattedDay from "./FormattedDay";
 import WeatherIcon from "./WeatherIcon";
+import WeatherTemperature from "./WeatherTemperature";
 import axios from "axios";
 
 export default function Weather(props) {
@@ -47,20 +48,20 @@ export default function Weather(props) {
     return (
       <div className="Weather">
         <head>
-          <meta charset="UTF-8" />
+          <meta charSet="UTF-8" />
           <meta
             name="viewport"
             content="width=device-width, initial-scale=1.0"
           />
           <script
             src="https://kit.fontawesome.com/71fc1b7f26.js"
-            crossorigin="anonymous"
+            crossOrigin="anonymous"
           ></script>
           <link
             rel="stylesheet"
             href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
             integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
-            crossorigin="anonymous"
+            crossOrigin="anonymous"
           />
 
           <link
@@ -77,24 +78,24 @@ export default function Weather(props) {
           <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
         </head>
         <body>
-          <div class="container">
-            <div class="card mb-3">
-              <div class="row no-gutters">
-                <div class="col-md-4">
-                  <div class="card-body">
-                    <div class="today-weather-info">
-                      <h2 class="date-dayname">
+          <div className="container">
+            <div className="card mb-3">
+              <div className="row no-gutters">
+                <div className="col-md-4">
+                  <div className="card-body">
+                    <div className="today-weather-info">
+                      <h2 className="date-dayname">
                         <FormattedDay date={weatherData.day} />
                       </h2>
-                      <span class="date-day">
+                      <span className="date-day">
                         <FormattedDate date={weatherData.date} />
                       </span>
                       <br />
-                      <button class="current-location" id="location-btn">
-                        <span class="material-icons">location_on</span>
+                      <button className="current-location" id="location-btn">
+                        <span className="material-icons">location_on</span>
                       </button>
-                      <span class="location" id="city"></span>
-                      <span class="country-location" id="country">
+                      <span className="location" id="city"></span>
+                      <span className="country-location" id="country">
                         {weatherData.city} | {weatherData.country}
                       </span>
                       <br />
@@ -106,40 +107,27 @@ export default function Weather(props) {
 
                       <br />
                       <br />
-                      <span>
-                        <h1 id="today-temp">
-                          {Math.round(weatherData.temperature)}°C
-                        </h1>
-                      </span>
-                      {/* <span>
-                      <h3 class="temperature-units">
-                        <a href="#" class="units active" id="celsius-link">
-                          °C
-                        </a>{" "}
-                        |
-                        <a href="#" class="units" id="fahrenheit-link">
-                          °F
-                        </a>
-                      </h3>
-                    </span> */}
-                      <div class="clear"></div>
-                      <h2 class="weather-type" id="description">
+
+                      <WeatherTemperature celsius={weatherData.temperature} />
+
+                      <div className="clear"></div>
+                      <h2 className="weather-type" id="description">
                         {weatherData.description}
                       </h2>
                     </div>
                   </div>
                 </div>
-                <div class="col-md-8">
-                  <div class="card-body">
-                    <form class="form-inline">
-                      <div class="form-group mb-2">
-                        <label for="staticLocationl2" class="sr-only">
+                <div className="col-md-8">
+                  <div className="card-body">
+                    <form className="form-inline">
+                      <div className="form-group mb-2">
+                        <label htmlFor="staticLocationl2" className="sr-only">
                           Forecast
                         </label>
                         <input
                           type="text"
-                          readonly
-                          class="form-control-plaintext"
+                          readOnly
+                          className="form-control-plaintext"
                           id="staticForecast2"
                           value=" ☂ Weather Forecast"
                         />
@@ -147,14 +135,14 @@ export default function Weather(props) {
                     </form>
 
                     <form onSubmit={handleSubmit}>
-                      <div class="row">
-                        <div class="form-group mx-sm-3 mb-2 col-8">
-                          <label for="inputCity2" class="sr-only">
+                      <div className="row">
+                        <div className="form-group mx-sm-3 mb-2 col-8">
+                          <label htmlFor="inputCity2" className="sr-only">
                             City
                           </label>
                           <input
                             type="search"
-                            class="form-control"
+                            className="form-control"
                             id="city-input"
                             autoFocus="on"
                             onChange={handleCityChange}
@@ -162,18 +150,18 @@ export default function Weather(props) {
                             placeholder="Type a city..."
                           />
                         </div>
-                        <div class="clear"></div>
+                        <div className="clear"></div>
                         <button
                           type="submit"
                           value="Search"
-                          class="btn btn-primary mx-sm-3 mb-2 col-2 search-btn"
+                          className="btn btn-primary mx-sm-3 mb-2 col-2 search-btn"
                         >
                           Search
                         </button>
                       </div>
                     </form>
-                    <div class="weather-status">
-                      <ul class="weather-status-info">
+                    <div className="weather-status">
+                      <ul className="weather-status-info">
                         <li id="clouds">Clouds : {weatherData.clouds} %</li>
                         <li id="humidity">
                           Humidity : {weatherData.humidity} %
@@ -184,60 +172,60 @@ export default function Weather(props) {
                       </ul>
                     </div>
                     <br />
-                    <div class="week-container row" id="forecast">
-                      <div class="week-list">
-                        <div class="row">
-                          <div class="col-sm">
-                            <h4 class="day-of-week">Mon</h4>
+                    <div className="week-container row" id="forecast">
+                      <div className="week-list">
+                        <div className="row">
+                          <div className="col-sm">
+                            <h4 className="day-of-week">Mon</h4>
                             <img
                               src="http://openweathermap.org/img/wn/02d@2x.png"
                               alt="cloud with sun"
                             />
-                            <span class="day-temp">18°C</span>
+                            <span className="day-temp">18°C</span>
                           </div>
-                          <div class="col-sm">
-                            <h4 class="day-of-week">Tues</h4>
+                          <div className="col-sm">
+                            <h4 className="day-of-week">Tues</h4>
                             <img
                               src="http://openweathermap.org/img/wn/04d@2x.png"
                               alt="cloudy"
                             />
-                            <span class="day-temp">18°C</span>
+                            <span className="day-temp">18°C</span>
                           </div>
-                          <div class="col-sm">
-                            <h4 class="day-of-week">Wed</h4>
+                          <div className="col-sm">
+                            <h4 className="day-of-week">Wed</h4>
                             <img
                               src="http://openweathermap.org/img/wn/10d@2x.png"
                               alt="rainy"
                             />
-                            <span class="day-temp">18°C</span>
+                            <span className="day-temp">18°C</span>
                           </div>
-                          <div class="col-sm">
-                            <h4 class="day-of-week">Thurs</h4>
+                          <div className="col-sm">
+                            <h4 className="day-of-week">Thurs</h4>
                             <img
                               src="http://openweathermap.org/img/wn/03d@2x.png"
                               alt="cloudy"
                             />
-                            <span class="day-temp">18°C</span>
+                            <span className="day-temp">18°C</span>
                           </div>
-                          <div class="col-sm">
-                            <h4 class="day-of-week">Fri</h4>
+                          <div className="col-sm">
+                            <h4 className="day-of-week">Fri</h4>
                             <img
                               src="http://openweathermap.org/img/wn/10d@2x.png"
                               alt="rainy"
                             />
-                            <span class="day-temp">18°C</span>
+                            <span className="day-temp">18°C</span>
                           </div>
                           {/* <h4>Tues</h4>
                         <img src="https://ssl.gstatic.com/onebox/weather/64/sunny.png" />
                         <h4>Wed</h4>
                         <img src="https://ssl.gstatic.com/onebox/weather/64/sunny.png" /> */}
                         </div>
-                        <div class="clear"></div>
+                        <div className="clear"></div>
                       </div>
                     </div>
                     <br />
-                    <p class="card-text">
-                      <small class="text-muted" id="last-updated">
+                    <p className="card-text">
+                      <small className="text-muted" id="last-updated">
                         Last updated : 3 mins ago
                       </small>
                     </p>
@@ -246,12 +234,12 @@ export default function Weather(props) {
               </div>
             </div>
           </div>
-          <div class="clear"></div>
-          <footer class="footer-credits">
+          <div className="clear"></div>
+          <footer className="footer-credits">
             <a
               href="https://github.com/sonializzie/weather-react"
               target="blank"
-              class="footer-link"
+              className="footer-link"
             >
               Open-source code on GitHub
             </a>
@@ -260,7 +248,7 @@ export default function Weather(props) {
           <script
             type="text/javascript"
             src="src/app.js"
-            charset="utf-8"
+            charSet="utf-8"
           ></script>
         </body>
       </div>
