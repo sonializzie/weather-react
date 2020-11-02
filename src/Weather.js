@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import FormattedDate from "./FormattedDate";
+import FormattedDay from "./FormattedDay";
 import axios from "axios";
 
 export default function Weather(props) {
@@ -8,6 +10,8 @@ export default function Weather(props) {
 
     setweatherData({
       ready: true,
+      day: new Date(response.data.dt * 1000),
+      date: new Date(response.data.dt * 1000),
       temperature: response.data.main.temp,
       city: response.data.name,
       country: response.data.sys.country,
@@ -59,13 +63,14 @@ export default function Weather(props) {
                 <div class="col-md-4">
                   <div class="card-body">
                     <div class="today-weather-info">
-                      <h2 class="date-dayname">Sunday</h2>
-                      <span class="date-day">14:00</span>
-                      <span class="date-day"> | 2nd August 2020</span>
-                      <br />
+                      <h2 class="date-dayname">
+                        <FormattedDay date={weatherData.day} />
+                      </h2>
+                      <span class="date-day">
+                        <FormattedDate date={weatherData.date} />
+                      </span>
                       <br />
                       <button class="current-location" id="location-btn">
-                        {/* <i class="fas fa-map-marker-alt"></i> */}
                         <span class="material-icons">location_on</span>
                       </button>
                       <span class="location" id="city"></span>
